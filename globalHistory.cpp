@@ -38,9 +38,9 @@ int main()
 
 	   getline(input,pathIdentifier,'\n');
 	   instruction = atoi(branch.c_str());
-	   int branchHistoryArrayIndex = (instruction/4) & 0x3
+	   int branchHistoryArrayIndex = (instruction/4) & 0x3;
 	   //int smithArrayIndex = (((instruction/4) << (bhr.getSize())) | (bhr.getValue() & 0xF)) & 0xFF;
-	   int smithArrayIndex = (((instruction/4) << (bhr.getSize())) | (bhr[branchHistoryArrayIndex].getValue() & 0xF)) & 0xFF;
+	   int smithArrayIndex = (((instruction/4) << (bhr[branchHistoryArrayIndex].getSize())) | (bhr[branchHistoryArrayIndex].getValue() & 0xF)) & 0xFF;
 	   pathPrediction = smith_array[smithArrayIndex].getPrediction();
 
 	   if (pathIdentifier.find('T') != std::string::npos)
