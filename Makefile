@@ -1,7 +1,7 @@
 CFLAGS=-Wall -ggdb
 
 local_history: localHistory.o stats.o smithCounter.o branchHistoryRegister.o
-	g++ -o global_history $(CFLAGS) localHistory.o stats.o smithCounter.o branchHistoryRegister.o
+	g++ -o local_history $(CFLAGS) localHistory.o stats.o smithCounter.o branchHistoryRegister.o
 
 branchHistoryRegister.o: branchHistoryRegister.cpp branchHistoryRegister.h
 	g++ $(CFLAGS) -c branchHistoryRegister.cpp -o branchHistoryRegister.o
